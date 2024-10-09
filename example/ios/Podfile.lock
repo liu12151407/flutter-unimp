@@ -122,7 +122,7 @@ DEPENDENCIES:
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AMap3DMap
     - AMapFoundation
     - AMapLocation
@@ -156,6 +156,6 @@ SPEC CHECKSUMS:
   UMCommon: 35b28c82a3a3be892f895628261edce11b6a9e3e
   UMDevice: dcdf7ec167387837559d149fbc7d793d984faf82
 
-PODFILE CHECKSUM: 50093964d14ea30a236131229deea9f30dffcefa
+PODFILE CHECKSUM: 93a4243a4559531839c0dbcf6b80718251d05b7a
 
 COCOAPODS: 1.15.2
