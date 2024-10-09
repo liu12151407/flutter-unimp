@@ -62,13 +62,7 @@ public class FlutterUnimpPlugin implements FlutterPlugin, MethodCallHandler {
         // sheetItems.add(item1);
         // sheetItems.add(item2);
         Log.i("unimp", "onCreate----");
-        DCSDKInitConfig config = new DCSDKInitConfig.Builder()
-                .setCapsule(true)
-                .setMenuDefFontSize("16px")
-                .setMenuDefFontWeight("normal")
-                .setMenuActionSheetItems(sheetItems)
-                .setMenuDefFontColor("#ff00ff")
-                .setEnableBackground(false)//开启后台运行
+        DCSDKInitConfig config = new DCSDKInitConfig.Builder().setCapsule(true).setMenuDefFontSize("16px").setMenuDefFontWeight("normal").setMenuActionSheetItems(sheetItems).setMenuDefFontColor("#ff00ff").setEnableBackground(false)//开启后台运行
                 .build();
         DCUniMPSDK.getInstance().initialize(context, config, new IDCUniMPPreInitCallback() {
             @Override
@@ -118,7 +112,7 @@ public class FlutterUnimpPlugin implements FlutterPlugin, MethodCallHandler {
             });
             // result.success("Android " + android.os.Build.VERSION.RELEASE);
         } else if (call.method.equals("openUniMP")) {
-//      String path = call.argument("path");
+            // String path = call.argument("path");
             String appId = call.argument("appId");
             HashMap<String, Object> extraData = call.argument("arguments");
             Log.v(TAG, "打开小程序-----------appid:" + appId + "----extraData:" + extraData);

@@ -77,24 +77,27 @@ class _MyAppState extends State<MyApp> {
       // 模拟下载
       String filePath = await downloadFile(appid);
       // 载入到
-      bool isInstall = await _flutterUnimpPlugin.installUniMPResource(appId: appid, wgtPath: filePath);
+      bool isInstall = await _flutterUnimpPlugin.installUniMPResource(
+          appId: appid, wgtPath: filePath);
       if (isInstall) {
-        Map? versionInfo = await _flutterUnimpPlugin.getUniMPVersionInfo(appId: appid);
+        Map? versionInfo =
+            await _flutterUnimpPlugin.getUniMPVersionInfo(appId: appid);
         print("小程序 $appid 应用资源文件部署成功，版本信息：$versionInfo");
       } else {
         print("小程序 $appid 应用资源部署失败");
       }
     } else {
-      Map? versionInfo = await _flutterUnimpPlugin.getUniMPVersionInfo(appId: appid);
+      Map? versionInfo =
+          await _flutterUnimpPlugin.getUniMPVersionInfo(appId: appid);
       print("已存在小程序 $appid 应用资源，版本信息：$versionInfo");
     }
   }
 
   void openMiniApp() async {
-    Map? map = await _flutterUnimpPlugin.openUniMP(appId: appId1, arguments: { "launchInfo": "Hello UniMP" });
+    Map? map = await _flutterUnimpPlugin
+        .openUniMP(appId: appId1, arguments: {"launchInfo": "Hello UniMP"});
     print("已存在小程序 $map");
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -104,9 +107,12 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: FloatingActionButton( onPressed: () {
-            openMiniApp();
-          },child: const Text('打开小程序'),),
+          child: FloatingActionButton(
+            onPressed: () {
+              openMiniApp();
+            },
+            child: const Text('打开小程序'),
+          ),
         ),
       ),
     );
